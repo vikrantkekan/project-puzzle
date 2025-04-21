@@ -1,0 +1,67 @@
+@keyframes mymovel {
+  from {left: 200px;}
+  to {left: 0px;}
+}
+
+@keyframes zoomin {
+  from {width: 12%;}
+  to {width: 15%;}
+}
+@keyframes shake {
+  0% {transform: rotate(0deg);}
+   0% {transform: rotate(-10deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes shaket {
+  0% {transform: rotate(45deg);}
+  100% {transform: rotate(-45deg);}
+}
+
+@keyframes selected {
+  from {  border:2px solid #fff;}
+  to{  border:2px solid #fecc00;}
+}
+.selected{
+      border:2px solid #fff;
+      animation: selected 1s infinite alternate-reverse;;
+      position: relative;
+    }
+
+
+.mymovel{
+  animation: mymovel 2s linear;
+  position: relative;
+}
+.zoomin{
+  animation: zoomin 1s infinite alternate-reverse;
+  position: relative;
+}
+.shake{
+  animation: shake 1s 2 alternate-reverse;
+  position: relative;
+}
+
+.shaket{
+  animation: shaket 1s infinite alternate-reverse;
+   position: relative;
+}
+
+
+@keyframes blink {
+  from {width:6rem;}
+  to {width:5rem;}
+}
+
+@keyframes trophy {
+  from {width: 70%;}
+  to {width: 60%;}
+}
+
+.blink{
+ animation:blink 0.5s infinite alternate-reverse
+}
+
+.trophy{
+  animation:trophy 0.7s infinite alternate-reverse
+}

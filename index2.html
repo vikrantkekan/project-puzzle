@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FB Instant Game - Moving Square</title>
+    <script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script>
+    <style>
+        body { margin: 0; overflow: hidden; background: #eee; }
+        #square { width: 40px; height: 40px; background: blue; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    </style>
+</head>
+<body>
+    <div id="square"></div>
+
+
+
+    <script>
+        window.onload = function () {
+            if (typeof FBInstant === "undefined") {
+                console.error("FBInstant SDK not loaded.");
+                return;
+            }
+            
+            FBInstant.initializeAsync().then(() => {
+                console.log("FB Instant Games SDK Initialized");
+                
+                // Set loading progress to 100%
+                FBInstant.setLoadingProgress(100);
+                
+                FBInstant.startGameAsync().then(() => {
+                    console.log("Game started!");
+                    startGame();
+                }).catch(error => console.error("FBInstant startGameAsync Error:", error));
+            }).catch(error => console.error("FBInstant initializeAsync Error:", error));
+        };
+
+        function startGame() {
+            const square = document.getElementById("square");
+            alert('loaded');
+            
+        }
+    </script>
+</body>
+</html>

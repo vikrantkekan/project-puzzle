@@ -1,0 +1,255 @@
+
+
+
+
+.mainbox {
+  position: relative;
+  width: 500px;
+  height: 500px;
+
+}
+
+.mainbox:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url(arrow-bottom.png) no-repeat;
+  background-size: 5%;
+  left: 5%;
+  top: 48%;
+  transform: rotate(90deg);
+  z-index: 99999;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  border: 10px solid #949090;
+  overflow: hidden;
+  transition: all ease-in-out 5s;
+  transform: rotate(90deg);
+}
+
+.spn {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+}
+
+.span1 {
+  clip-path: polygon(0 0, 0 50%, 50% 50%);
+  background-color: #fecc00;
+}
+
+.span2 {
+  clip-path: polygon(0% 0%, 49% 0, 50% 50%);
+  background-color: #5b5856;
+}
+
+.span3 {
+  clip-path: polygon(49% 0%, 90% 0%, 50% 50%);
+  background-color: #fecc00;
+}
+
+.span4 {
+  clip-path: polygon(90% 0%, 105% 50%, 50% 50%);
+  background-color: #5b5856;
+}
+
+/*
+.span5 {
+  clip-path: polygon(100% 18%, 100% 50%, 50% 50%);
+  background: #000;
+}
+*/
+
+.box2 .span1 {
+  background-color: #fecc00; 
+}
+.box2 .span2 {
+  background-color: #5b5856; 
+}
+.box2 .span3 {
+  background-color: #fecc00; 
+}
+.box2 .span4 {
+  background-color: #5b5856;
+}
+
+.box2 {
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg);
+}
+
+.font1 {
+  color: white;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 1px;
+}
+
+.box1 .span1 b {
+  position: absolute;
+  top: 37%;
+  right: 72%;
+  transform: rotate(208deg);
+  text-align: center;
+  font-weight: 400;
+  color: #571e17;
+}
+
+.box1 .span2 b {
+  position: absolute;
+  top: 14%;
+  right: 50%;
+  transform: rotate(-125deg);
+  font-weight: 400;
+}
+
+.box1 .span3 b {
+  position: absolute;
+  top: 13%;
+  right: 24%;
+  transform: rotate(-64deg);
+  font-weight: 400;
+}
+
+.box1 .span4 b {
+  position: absolute;
+  top: 32%;
+  right: 5%;
+  transform: rotate(-25deg);
+  font-weight: 400;
+}
+
+.box1 .span5 b {
+  position: absolute;
+  top: 38%;
+  right: 10%;
+  transform: rotate(-15deg);
+  text-align: center;
+}
+
+.box2 .span1 b {
+  position: absolute;
+  top: 32%;
+  right: 64%;
+  transform: rotate(206deg);
+  font-weight: 400;
+  color: #571e17;
+}
+
+.box2 .span2 b {
+  position: absolute;
+  top: 20%;
+  right: 48%;
+  transform: rotate(-126deg);
+  text-align: center;
+  font-weight: 400;
+
+}
+
+.box2 .span3 b {
+  position: absolute;
+  top: 15%;
+  right: 24%;
+  transform: rotate(288deg);
+  font-weight: 400;
+}
+
+.box2 .span4 b {
+  position: absolute;
+  top: 35%;
+  right: 15%;
+  transform: rotate(328deg);
+  font-weight: 400;
+}
+
+.box2 .span5 b {
+  position: absolute;
+  top: 35%;
+  right: 10%;
+  transform: rotate(-20deg);
+  text-align: center;
+}
+
+.spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 4px solid white;
+  background-color: #5b5856;
+  color: #fff;
+  box-shadow: 0 5px 20px #000;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 999999;
+}
+
+.spin:active {
+  width: 70px;
+  height: 70px;
+  font-size: 20px;
+}
+
+.mainbox.animate:after {
+  animation: animateArrow 0.7s ease infinite;
+}
+
+
+@keyframes animateArrow {
+  50% {
+    right: -50px;
+  }
+}
+
+@media (max-width: 576px) {
+
+
+  .mainbox {
+    width: 340px;
+    height: 340px;
+    /*height: 50%;*/
+  }
+
+  .spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 4px solid white;
+  background-color: #ff5722;
+  color: #fff;
+  box-shadow: 0 5px 20px #000;
+  font-weight: bold;
+  font-size: 14px !important;
+  cursor: pointer;
+  z-index: 999999;
+}
+
+.font1 {
+  color: white;
+  font-size: 11px;
+  line-height: 130%;
+  letter-spacing: 1px;
+}
+
+#myModal_wheel{
+  margin-top: 28% !important;
+}
+
+
+}

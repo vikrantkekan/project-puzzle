@@ -1,0 +1,1406 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script>
+
+	 <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="css/jquery.min.js"></script>
+  <script src="css/bootstrap.min.js"></script>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+.lato-regular {
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.dancing {
+  font-family: "Dancing Script", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    font-family: Montserrat;
+}
+
+
+@media (min-width: 775px) and (max-width: 8020px) {
+
+	.mobgrid{
+     display: block;
+    }
+
+.deskgrid {
+      height: 100vh;display: flex;justify-content: center;align-items: center;
+    }
+
+    .deskright{
+    	height:100vh;overflow: hidden;padding-left: 0px;padding-right: 0px;background-color: #eee;border: 5px solid #5c5957;
+    }
+
+ .modal-backdrop{
+	opacity: 0 !important;
+}
+.modal-dialog{
+	width: 33.3%;
+	background-color: transparent !important;
+	position: absolute;
+	right: 0 !important;
+	top: 12% !important;
+}
+.modal-content{
+	border-radius: 5px !important;
+}
+
+
+
+.playerscore{
+	background-color:#23211f;
+	padding: 15px;
+	color:#fff;
+	width: 100%;
+	letter-spacing:1.2px;
+	font-size: 21px;
+	border-bottom: 1px solid #fecc00;
+	}
+
+.scoreblock{
+	display:block;
+	justify-content:space-evenly;
+		}
+
+#playeronescore, #computerscore{
+	font-size: 21px;
+	font-weight: 500;
+	} 
+
+#playbtn{
+	background-color: #fecc00;
+	padding:10px 34px;
+	font-size: 14px;
+	position: absolute;
+	top:88%;
+	z-index: 9;
+	left:50%;
+	color:#5c5957;
+	transform: translate(-35%,0%);
+}
+
+.bottom-block{
+	background-color: #23211f;
+}
+.mute{
+position: fixed;bottom:32%;right:0;	
+}
+
+
+}
+
+@media only screen and (max-width: 720px) {
+
+body{
+	background-color: #eee !important;
+}
+p{
+	font-size: 16px !important;
+}
+.col-md-5{
+width: 30% !important;
+}
+
+p img{
+	width: 50px !important;
+	top: 50px !important;
+}
+.btn{
+font-size:12px !important;
+}
+.modal-dialog{
+	right: 0 !important;
+	left: 0 !important;
+	top: 50 !important;
+	bottom: 0 !important;
+	width: auto !important;
+
+}
+.modal-content,.modal-dialog{
+	background-color: rgba(35, 33, 31,0.4) !important;
+	border-radius: 15px;
+}
+
+.deskgrid{
+	 display: none !important;
+}
+
+/*
+.modifymob{
+	display: flex;
+	max-height: 80vh;
+	justify-content: center;
+	width: auto !important;
+}
+*/
+
+.modifymob{
+	width: 80%;
+	margin: auto;
+	float: none;
+}
+.mobgrid{
+     display: block;
+    }
+
+   .deskright {
+   	display: block !important;
+   	background-color: #eee !important;
+   }
+
+.playerscore{
+	background-color:#23211f;
+	padding: 5px;
+	color:#fff;
+	width: 100%;
+	letter-spacing:1px;
+	font-size: 14px;
+	border-bottom: 1px solid #fecc00;
+	}
+	.scoreblock{
+	display:flex;
+	justify-content:space-evenly;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	background-color: #23211f;
+	}
+	#playeronescore, #computerscore{
+	font-size: 16px;
+	font-weight: 500;
+	} 
+
+.invitefrnds,.social{
+	display: none !important;
+	}
+
+#playbtn{
+	background-color: #fecc00;
+	padding:5px 17px;
+	font-size: 12px;
+	position: absolute;
+	top:0%;
+	left: 50%;
+	margin-top: 50px;
+	width: 120px;
+	transform: translate(-50%,-50%);
+	z-index: 9;
+	color:#5c5957;
+}
+
+
+.bottom-block{
+	background-color: #eee;
+}
+
+.mute{
+	position: fixed;bottom:15%;right:0;
+}
+#mute{
+	width: 25px !important;
+}
+
+#trophysec{
+	margin-top: -70% !important;
+}
+
+#msg{
+margin-top: 7% !important;
+font-size: 18px !important;
+}
+
+}
+
+
+</style>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<link rel="stylesheet" type="text/css" href="dice.css">
+
+		<link rel="stylesheet" type="text/css" href="animate.css">
+
+
+
+</head>
+
+<body style="background-color: #23211f;height:100vh;overflow: hidden;">
+
+
+	<script>
+        window.onload = function () {
+            if (typeof FBInstant === "undefined") {
+                console.error("FBInstant SDK not loaded.");
+                return;
+            }
+            
+            FBInstant.initializeAsync().then(() => {
+                console.log("FB Instant Games SDK Initialized");
+                
+                // Set loading progress to 100%
+                FBInstant.setLoadingProgress(100);
+                
+                FBInstant.startGameAsync().then(() => {
+                    console.log("Game started!");
+
+                    startGame();
+                }).catch(error => console.error("FBInstant startGameAsync Error:", error));
+            }).catch(error => console.error("FBInstant initializeAsync Error:", error));
+
+
+            
+        };
+
+
+
+        function startGame() {
+        	var player_Name = FBInstant.player.getName();
+            console.log("Game started!"); 
+            $("#entry").modal('show');
+            if(player_Name){
+            	document.getElementById("myname").value=player_Name;
+            }else{
+            	document.getElementById("myname").value='Dotty';
+            }
+
+            
+        }
+
+    </script>
+
+<div class="container-fluid" style="">
+
+<div id="confetti" class="confetti" style="display:none;">
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+</div>
+
+<div class="row">
+
+
+
+<div class="col-md-9 col-lg-8 col-sm-12 col-xs-12 modifymob" style="padding:0px;">
+
+<!----end desk grid--->
+
+<div id="mobgrid" class="mobgrid" style="">
+<div class="mobinner" style="display:block;">
+
+<div style="display: flex;">
+	<div id="70" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/70.webp" style="width:100%;">
+		</div>
+
+		<div id="69" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/69.webp" style="width:100%;">
+		</div>
+		<div id="68" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/68.webp" style="width:100%;">
+		</div>
+		<div id="67" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/67.webp" style="width:100%;">
+		</div>
+		<div id="66" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/66.webp" style="width:100%;">
+		</div>
+		<div id="65" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/65.webp" style="width:100%;">
+		</div>
+		<div id="64" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/64.webp" style="width:100%;">
+		</div>
+	</div>
+
+<div style="display: flex;">
+	<div id="57" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/57.webp" style="width:100%;">
+		</div>
+
+		<div id="58" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/58.webp" style="width:100%;">
+		</div>
+		<div id="59" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/59.webp" style="width:100%;">
+		</div>
+		<div id="60" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/60.webp" style="width:100%;">
+		</div>
+		<div id="61" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/61.webp" style="width:100%;">
+		</div>
+		<div id="62" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/62.webp" style="width:100%;">
+		</div>
+		<div id="63" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/63.webp" style="width:100%;">
+		</div>
+	</div>
+
+<div style="display: flex;">
+	<div id="56" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/56.webp" style="width:100%;">
+		</div>
+
+		<div id="55" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/55.webp" style="width:100%;">
+		</div>
+		<div id="54" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/54.webp" style="width:100%;">
+		</div>
+		<div id="53" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/53.webp" style="width:100%;">
+		</div>
+		<div id="52" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/52.webp" style="width:100%;">
+		</div>
+		<div id="51" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/51.webp" style="width:100%;">
+		</div>
+		<div id="50" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/50.webp" style="width:100%;">
+		</div>
+	</div>
+
+	<div style="display: flex;">
+<div id="43" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/43.webp" style="width:100%;">
+		</div>
+
+		<div id="44" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/44.webp" style="width:100%;">
+		</div>
+		<div id="45" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/45.webp" style="width:100%;">
+		</div>
+		<div id="46" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/46.webp" style="width:100%;">
+		</div>
+		<div id="47" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/47.webp" style="width:100%;">
+		</div>
+		<div id="48" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/48.webp" style="width:100%;">
+		</div>
+		<div id="49" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/49.webp" style="width:100%;">
+		</div>
+	</div>
+
+	<div style="display: flex;">
+
+	<div id="42" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/42.webp" style="width:100%;">
+		</div>
+
+	<div id="41" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/41.webp" style="width:100%;">
+		</div>
+
+		<div id="40" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/40.webp" style="width:100%;">
+		</div>
+
+		<div id="39" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/39.webp" style="width:100%;">
+		</div>
+
+		<div id="38" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/38.webp" style="width:100%;">
+		</div>
+
+		<div id="37" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/37.webp" style="width:100%;">
+		</div>
+
+		<div id="36" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/36.webp" style="width:100%;">
+		</div>
+
+	</div>
+
+	<div style="display: flex;">
+<div id="29" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/29.webp" style="width:100%;">
+		</div>
+
+			<div id="30" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/30.webp" style="width:100%;">
+		</div>
+
+			<div id="31" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/31.webp" style="width:100%;">
+		</div>
+
+			<div id="32" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/32.webp" style="width:100%;">
+		</div>
+			<div id="33" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/33.webp" style="width:100%;">
+		</div>
+
+		<div id="34" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/34.webp" style="width:100%;">
+		</div>
+
+		<div id="35" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/35.webp" style="width:100%;">
+		</div>
+
+			
+	</div>
+
+	<div style="display: flex;">
+	
+		<div id="28" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/28.webp" style="width:100%;">
+		</div>
+
+		<div id="27" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/27.webp" style="width:100%;">
+		</div>
+
+		<div id="26" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/26.webp" style="width:100%;">
+		</div>
+
+				<div id="25" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/25.webp" style="width:100%;">
+		</div>
+
+	<div id="24" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/24.webp" style="width:100%;">
+		</div>
+
+	<div id="23" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/23.webp" style="width:100%;">
+		</div>
+
+		<div id="22" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/22.webp" style="width:100%;">
+		</div>
+
+	</div>
+
+	<div style="display: flex;">
+
+	<div id="15" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/15.webp" style="width:100%;">
+		</div>
+
+		<div id="16" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/16.webp" style="width:100%;">
+		</div>
+
+			<div id="17" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/17.webp" style="width:100%;">
+		</div>
+
+		<div id="18" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/18.webp" style="width:100%;">
+		</div>
+
+		<div id="19" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/19.webp" style="width:100%;">
+		</div>
+
+		<div id="20" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/20.webp" style="width:100%;">
+		</div>
+		<div id="21" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/21.webp" style="width:100%;">
+		</div>
+
+	</div>
+
+	<div style="display: flex;">
+		
+		<div id="14" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/14.webp" style="width:100%;">
+		</div>
+		<div id="13" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/13.webp" style="width:100%;">
+		</div>
+		<div id="12" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/12.webp" style="width:100%;">
+		</div>
+		<div id="11" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/11.webp" style="width:100%;">
+			
+		</div>
+
+<div id="10" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/10.webp" style="width:100%;">
+		</div>
+	<div id="9" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/9.webp" style="width:100%;">
+		</div>
+		<div id="8" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/8.webp" style="width:100%;">
+		</div>
+	
+		
+	</div>
+
+	<div style="display: flex;">
+		<div id="1" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/1.webp" style="width:100%;">
+
+			<img id="computer" src="computer.webp" style="width:6rem;position: absolute;left:48%;top:33%;transform: translate(-50%,-50%);">
+				
+			<img id="pawn" src="player.webp" class="blink" style="width:6rem;position: absolute;left:50%;top:35%;transform: translate(-50%,-50%);">
+
+		</div>
+
+		<div id="2" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/2.webp" style="width:100%;">
+		</div>
+
+		<div id="3" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/3.webp" style="width:100%;">
+		</div>
+
+		<div id="4" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/4.webp" style="width:100%;">
+		</div>
+
+		<div id="5" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/5.webp" style="width:100%;">
+		</div>
+
+		<div id="6" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/6.webp" style="width:100%;">
+		</div>
+
+		<div id="7" style="width:100%;text-align: center;position:relative;">
+			<img src="tiles/7.webp" style="width:100%;">
+		</div>
+		
+	</div>
+
+</div>
+</div>
+
+<!---end mobile grid--->
+
+</div>
+<!---cube logic is herer---->
+
+
+<div class="deskright col-md-3 col-lg-4 col-sm-12 col-xs-12" style="padding: 0px;">
+
+<div class="scoreblock">
+<div class="playerscore">
+	<img src="player.webp" style="width:30px;"> <span id="playerscorename">Player</span>'s Score : 
+	<span id="playeronescore">0</span></div> 
+
+<div class="playerscore">
+	<img src="computer.webp" style="width:30px;"> Company Score: 
+	<span id="computerscore">0</span></div>
+</div>
+
+
+<div id="trophysec" style="margin-top:5%;position: absolute;display: none;">
+	<center>
+<img class="trophy" src="trophy.png" style="width:50%;">
+<p class="dancing" style="font-size:54px;text-align: center;color:#fecc00;">Congratulations! <br>You are a Winner</p>
+</center>
+</div>
+
+
+<div id="btnandcube" style="position:relative;">
+
+<button id="playbtn" type="button" style="" onClick="select_player();">Click to Play</button>
+
+<section id="rightcube" class="container" style="position: relative;display: block;">
+
+  <div id="cube" style="">
+    <div class="front">
+      <span class="dot dot1"></span>
+    </div>
+    <div class="back">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>
+    </div>
+    <div class="right">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>  
+      <span class="dot dot3"></span>
+    </div>
+    <div class="left">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>  
+      <span class="dot dot3"></span>
+      <span class="dot dot4"></span>
+    </div>
+    <div class="top">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>  
+      <span class="dot dot3"></span>
+      <span class="dot dot4"></span>
+      <span class="dot dot5"></span>
+    </div>
+    <div class="bottom">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>  
+      <span class="dot dot3"></span>
+      <span class="dot dot4"></span>
+      <span class="dot dot5"></span>
+      <span class="dot dot6"></span>
+    </div>
+  </div>
+
+</section>
+
+</div>
+
+<div class="bottom-block" style="height:100%;">
+
+<div style="width:100%;background-color: #eee;">
+<h2 id="msg" style="display: block;position: relative;margin-top:30%;width:100%;text-align: center;color:#23211f;padding: 15px;font-size:21px;">Player's Turn</h2>
+</div>
+
+<div class="invitefrnds" style="width:100%;border-bottom: 1px solid #5c5957;">
+	<a href="#" data-toggle="modal" data-target="#invite">
+<h2 style="display: block;position: relative;width:100%;text-align: center;color:#fff;padding: 15px;font-size:18px;">
+	Invite your freinds  &nbsp;&nbsp;<img src="icons/front.png" width="21px" style="">
+</h2>
+</a>
+</div>
+
+<div class="social" style="width:100%;padding: 20px;display: flex;justify-content:space-evenly;">
+
+<a href="#" target="_blank">
+<img src="icons/fb.png" width="30px;">
+</a>
+<a href="#" target="_blank">
+<img src="icons/insta.png" width="30px;">
+</a>
+<a href="#" target="_blank">
+<img src="icons/linkedin.png" width="30px;">
+</a>
+<a href="#" target="_blank">
+<img src="icons/yt.png" width="30px;">
+</a>
+<a href="#" target="_blank">
+<img src="icons/web.png" width="30px;">
+</a>
+
+</div>
+
+
+<div class="mute" style="">
+	<img id="mute" src="mute.png" onClick="switchMute();" style="width:50px;">
+	<img id="unmute" src="unmute.png" onClick="switchMute();" style="width:50px;display:none;">
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+<!---modal template--->
+
+<!-- Entry -->
+  <div class="modal fade" id="entry" role="dialog" data-backdrop='static'>
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        		
+        		<div class="row" style="padding:21px;">
+        		<div class="col-md-12">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Welcome! To continue in the game, please enter your name</p>
+        		<br>
+        		<input type="text" name="myname" id="myname" placeholder="Enter Your Name" style="background-color:transparent;height:45px;width:100%;border:1px solid #fecc00;font-size: 18px;" required>
+
+        		<p id="loginmsg"></p>
+				</div>	
+				</div>
+				<div class="row" style="padding:21px;">
+					<div class="col-md-12">
+        		<button type="button" onClick="enterplay();" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Play Now </button> 
+        			</div>
+        		<br>
+        		</div>
+					
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="five" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Concept <br>approved in <br>one go ! <img class="zoomin" src="icons/5/1.svg" style="width:15%;" >
+        		</p>
+						</div>
+						<div class="col-md-5">
+        		<img class="shake" src="icons/5/2.svg" style="width:80%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Go up to 35 </button> <img class="mymovel" src="icons/5/3.svg" style="width:5%;">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="combine" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-12">
+        		<img src="tiles/10.png" style="width:100%;" />
+						</div>
+						
+					</div>
+
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">OK </button> <img class="mymovel" src="icons/5/3.svg" style="width:5%;">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="ten" role="dialog" >
+    <div class="modal-dialog modal-md" style="color:#000;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#fecc00;border: 1px solid #000;border-radius: 15px;position: relative;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;position: relative;">
+        		<div class="col-md-12" style="position: relative;">
+        		<p style="font-size:45px;letter-spacing: 1.5px;z-index: 99;"> Client put project on hold <br>
+<img class="shaket" src="modals/svg/10.svg" style="position: absolute;top: 100px;right:0;width: 150px;z-index: 0;">
+        		</p>
+						</div>
+						
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #23211f;color:#23211f;font-size:21px;">Wait 2 turns </button> 
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="thirteen" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Won a new client pitch<br>
+        		</p>
+						</div>
+						<div class="col-md-5">
+        		<img class="shake" src="modals/svg/13.svg" style="width:80%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Go up to 28 </button> <img class="mymovel" src="icons/5/3.svg" style="width:5%;">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="seventeen" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Campaigns wins an award !<br>
+        		</p>
+						</div>
+						<div class="col-md-5">
+        		<img class="shake" src="modals/svg/17.svg" style="width:80%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Go up to 25 </button> <img class="mymovel" src="icons/5/3.svg" style="width:5%;">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="twentyone" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Working weekends !<br>
+        		</p>
+						</div>
+						<div class="col-md-5">
+        	<img class="shake" src="modals/svg/21.svg" style="width:80%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;"> Go down to 07 </button> <img class="mymovel" src="icons/5/3.svg" style="width:5%;">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="twentythree" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Client asked to switch to the original idea<br>
+        			
+        		</p>
+						</div>
+						<div class="col-md-5">
+        		<img class="shake" src="modals/svg/23.svg" style="width:80%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Move backwards until you roll 6 or 1 </button> <img class="mymovel" src="icons/5/3.svg" style="width:5%;">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="twentyseven" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Retainer extended for another year! <br><img class="zoomin" src="icons/5/1.svg" style="width:15%;" >
+        		</p>
+						</div>
+						<div class="col-md-5">
+        		<img class="shake" src="modals/svg/27.svg" style="width:80%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Move ahead 2 steps </button> <img class="mymovel" src="icons/5/3.svg" style="width:5%;">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="thirty" role="dialog" >
+    <div class="modal-dialog modal-md" style="color:#000;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#fecc00;border: 1px solid #000;border-radius: 15px;height:380px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-12">
+        		<p style="font-size:45px;letter-spacing: 1.5px;"> Client on leave- No feedback for a week<br>
+<img class="shake" src="modals/svg/30.svg" style="position: absolute;top: 150px;right:0;width: 150px;z-index: 0;">
+					</p>
+				</div>
+						
+				</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #23211f;color:#23211f;font-size:21px;">Skip one turn </button> <img class="" src="icons/5/3.svg" style="width:7%;transform: rotate(180deg);">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="thirtytwo" role="dialog" >
+    <div class="modal-dialog modal-md" style="color:#000;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#fecc00;border: 1px solid #000;border-radius: 15px;height:380px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-12">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Content goes viral on social media!<br>
+              <img class="shake" src="modals/svg/png/32.png" style="position: absolute;top: 130px;right:0;width: 150px;z-index: 0;">
+					</p>
+				</div>
+						
+				</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #23211f;color:#23211f;font-size:21px;">Go up to 40</button> <img class="mymovel" src="icons/5/3.svg" style="width:7%;">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="thirtyseven" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Last minute changes!<br>
+        		</p>
+						</div>
+						<div class="col-md-5">
+        		  <img class="shaket" src="modals/svg/png/37.png" style="width:80%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Go down to 14 </button> <img class="mymovel" src="icons/5/3.svg" style="width:5%;">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="fortyone" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Agency wins four new accounts in a month!<br>
+        		</p>
+						</div>
+						<div class="col-md-5">
+        		<img class="shake" src="modals/svg/41.svg" style="width:40%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Move ahead 3 steps</button> <img class="mymovel" src="icons/5/3.svg" style="width:5%;">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="fortyfive" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Team's campaign is an instant hit!<br>
+        		</p>
+						</div>
+						<div class="col-md-5">
+        		<img class="shake" src="modals/svg/45.svg" style="width:80%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Jump to any square of your choice in the row</button> <img class="mymovel" src="icons/5/3.svg" style="width:5%;">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="fortyseven" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-12">
+              <img class="shake" src="modals/svg/47.svg" style="width:80%;">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Launch is preponed<br>
+        		</p>
+						</div>
+					
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Go down to 22</button> <img class="" src="icons/5/3.svg" style="width:7%;transform: rotate(180deg);">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="fiftyone" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Client gives a glowing testimonial!<br>
+        		</p>
+						</div>
+						<div class="col-md-5">
+        	 <img class="shake" src="modals/svg/51.svg" style="width:80%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Go up to 64</button> <img class="mymovel" src="icons/5/3.svg" style="width:7%;">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="fiftyfive" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Creative posted with the old logo<br>
+        		</p>
+						</div>
+						<div class="col-md-5">
+        		  <img class="shake" src="icons/5/3.svg" style="width:80%;transform: rotate(180deg);">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Skip one turn</button> 
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="sixty" role="dialog" >
+    <div class="modal-dialog modal-md" style="color:#000;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#fecc00;border: 1px solid #000;border-radius: 15px;height:380px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-12">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Can you give me some more options?<br>
+              <img class="shake" src="modals/svg/png/60.png" style="position: absolute;top: 150px;right:0;width: 150px;z-index: 0;">
+					</p>
+				</div>
+				</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #23211f;color:#23211f;font-size:21px;">Go down to 33</button> <img class="" src="icons/5/3.svg" style="width:7%;transform: rotate(180deg);">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="sixtythree" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Can you give me one more option?<br>
+        		</p>
+						</div>
+						<div class="col-md-5">
+        		<img class="shake" src="modals/svg/png/63.png" style="width:80%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Go down to 33 </button> <img class="" src="icons/5/3.svg" style="width:7%;transform: rotate(180deg);">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="sixtyfive" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">The 'quick edit' becomes a full rework.<br>
+        		</p>
+						</div>
+						<div class="col-md-5">
+        		<img class="shake" src="modals/svg/png/65.png" style="width:80%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Go down to 34 </button> <img class="" src="icons/5/3.svg" style="width:7%;transform: rotate(180deg);">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="sixtynine" role="dialog" >
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+        	<div class="row" style="padding:21px;">
+        		<div class="col-md-7">
+        		<p style="font-size:45px;letter-spacing: 1.5px;">Client changed the brief.<br>
+        		</p>
+						</div>
+						<div class="col-md-5">
+        		<img class="shake" src="modals/svg/69.svg" style="width:80%;">
+						</div>
+					</div>
+					<div class="row" style="padding:21px;">
+        		<button data-dismiss="modal" type="button" class="btn" style="background-color:transparent;border: 1px solid #fecc00;color:#fff;font-size:21px;">Go to starting point</button> <img class="" src="icons/5/3.svg" style="width:7%;transform: rotate(180deg);">
+        		<br>
+        		</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Modal number 5 -->
+  <div class="modal fade" id="invite" role="dialog" style="margin-top:5%;">
+    <div class="modal-dialog modal-md" style="background-color:#23211f;color:#fff;">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:#23211f;border: 1px solid #fecc00;border-radius: 15px;">
+        <div class="modal-body">
+          <div class="row" style="padding:21px;">
+            <div class="col-md-7">
+            <p style="font-size:45px;letter-spacing: 1.5px;">Invite your freind on<br>
+            </p>
+            </div>
+            <div class="col-md-5">
+            <img class="shake" src="modals/svg/13.svg" style="width:80%;">
+            </div>
+          </div>
+
+          <div class="row" style="padding:21px;">
+              <div class="share-buttons" style="display: flex;justify-content: space-evenly;">
+
+        <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://3dotsdesign.in/game/" target="_blank" style="padding:15px;border:1px solid #fff;color:#fff;">
+            Facebook
+        </a>
+
+        <a class="whatsapp" href="https://api.whatsapp.com/send?text=Check%20out%20this%20amazing%20game!%20https://3dotsdesign.in/game/" target="_blank" style="padding:15px;border:1px solid #fff;color:#fff;">
+            WhatsApp
+        </a>
+        <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://3dotsdesign.in/game/&title=Amazing%20Game&summary=Check%20this%20out!" target="_blank" style="padding:15px;border:1px solid #fff;color:#fff;">
+            LinkedIn
+        </a>
+    </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!---modal template--->
+
+
+
+
+<audio id="diceaudio">
+<source src="Shaking-Dice-Long-2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="bgmusic" autoplay muted loop>
+  <source src="That-Game-2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pop" >
+  <source src="pop.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="winner" >
+  <source src="CrowdCheering-EC01-56-1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="stepdown" >
+  <source src="Failed.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="stepup" >
+  <source src="Magical-Winner.mp3" type="audio/mpeg">
+</audio>
+
+<input type="hidden" id="savedname" name="savedname">
+<input type="hidden" id="mytemp" name="mytemp">
+<input type="hidden" id="mytemp2" name="mytemp2">
+
+
+
+
+<script>
+/*
+$(document).ready(function(){
+  var width = screen.width,
+  height = screen.height;
+
+ if (screen.width <= 720 ) {
+	$('#deskgrid').remove();
+      }else{
+    $('#mobgrid').remove()
+       }
+});
+*/
+
+
+
+//$("#invite").modal('show');
+
+function enterplay(){
+	switchMute();
+	var getplayername=document.getElementById('myname').value;
+	if(getplayername){
+		$("#entry").modal('hide');
+document.getElementById('playerscorename').innerHTML=getplayername;
+document.getElementById('savedname').value=getplayername;
+document.getElementById('msg').innerHTML=getplayername+"'s Turn";
+	}else{
+		document.getElementById('loginmsg').innerHTML='Enter your name to conitnue';
+	}
+}
+</script>
+
+<script>
+var skipper=0;
+var rollback='';
+
+var counter=0; //0 for player 1 and 1 for computer
+
+var diceaudio = document.getElementById("diceaudio"); 
+var bgmusic = document.getElementById("bgmusic");
+var pop = document.getElementById("pop");
+var winner = document.getElementById("winner");
+
+function switchMute() { 
+	if(bgmusic.muted){
+		bgmusic.muted = false;
+		bgmusic.play();
+		document.getElementById('mute').style.display='none';
+		document.getElementById('unmute').style.display='block';
+	}else{
+		bgmusic.muted = true;
+		bgmusic.play();
+		document.getElementById('mute').style.display='block';
+		document.getElementById('unmute').style.display='none';
+	}
+} 
+
+function select_player(){
+
+if(counter==0){
+generatenum('pawn');
+if(skipper==0){counter=1;}else{skipper=skipper-1;}
+}
+else if(counter==1){
+generatenum('computer');
+if(skipper==0){counter=0;}else{skipper=skipper-1;}
+
+}
+}
+
+var cube = document.getElementById('cube');
+
+function generatenum(p){
+
+document.getElementById('playbtn').style.display='none';
+  diceaudio.play(); 
+
+ var randomnumber = Math.floor(Math.random() * (6 - 0) ) + 1;
+
+//var randomnumber=2;
+
+if(randomnumber==1){
+	var newY=1800;
+	var newX=3600;
+}
+else if(randomnumber==2){
+	var newY=1260;
+	var newX=3600;
+}
+else if(randomnumber==3){
+	var newY=-1890;
+	var newX=3600;
+}
+
+else if(randomnumber==4){
+	var newY=1890;
+	var newX=3600;
+}
+
+else if(randomnumber==5){
+	var newY=3600;
+	var newX=2070;
+}
+
+else if(randomnumber==6){
+	var newY=3600;
+	var newX=1890;
+}
+
+  cube.classList.add('cube_transition');
+
+cube.style.transform = 'rotateX('+newX+'deg) rotateY('+newY+'deg)'; // logic for 5
+
+setTimeout(function(){movepawn(randomnumber,p);}, 6000);
+
+
+}
+
+/*
+cube.onclick = function() {
+
+let response = generatenum();
+
+}
+*/
+
+</script>
+
+<script type="text/javascript" src="logic.js"></script>
+
+
+
+
+</body>
+</html>
